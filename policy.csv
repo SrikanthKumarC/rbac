@@ -1,10 +1,28 @@
-p, alice, data1, read, dom1, grp1
-p, bob, data2, read, dom2, grp1
-p, bob, data2, read, dom1, grp1
-p, bob, data2, write, dom1, grp1
-p, jacob, data2, write, dom1, grp1
-p, jacob, data3, read, dom1, grp1
+p, alice, domain-reader, domain1
+p, bob, group-owner, group2
+p, srikanth, superadmin, everything
 
+g, domain-reader, domain-read
+g, domain-owner, domain-read
+g, domain-owner, domain-write
 
-g1, someone, grp1
-g, someone, bob, dom1
+g, group-reader, group-read
+g, group-owner, group-read
+g, group-owner, group-write
+
+g, domain-reader, group-reader
+g, domain-owner, group-owner
+g, domain-onwer, domain-read
+g, domain-reader, domain-read
+g, domain-owner, domain-write
+
+g, superadmin, domain-owner
+g, superadmin, domain-reader
+g, superadmin, super-write
+g, superadmin, super-read
+
+g2, domain1, group1
+g2, domain2, group2
+
+g2, everything, domain1
+g2, everything, domain2
